@@ -14,22 +14,25 @@ fun main(){
 //
 
 //    **** INITIALIZING DICE CLASS
-    val myFirstDice = Dice();
+    val myFirstDice = Dice(6);
+    val mySecondDice = Dice(20)
 
     val diceRoll = myFirstDice.makeRoll();
-    println("Your ${myFirstDice.sides} sided dice, rolled a $diceRoll");
+    val diceRollTwo = mySecondDice.makeRoll();
+
+    println("Your ${myFirstDice.numSides} sided dice rolled a $diceRoll");
+
+    println("Your ${mySecondDice.numSides} sided dice rolled a $diceRollTwo");
+
 
 
 }
 
-class Dice{
-
-//    PROPERTIES
-    val sides = 6;
+class Dice(val numSides: Int){
 
 //    METHODS
     fun makeRoll(): Int{
-        val randomNum = (1..6).random();
+        val randomNum = (1..numSides).random();
         return randomNum;
     }
 
