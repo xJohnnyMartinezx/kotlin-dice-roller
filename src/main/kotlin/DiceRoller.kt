@@ -16,8 +16,9 @@ fun main(){
 //    **** INITIALIZING DICE CLASS
     val myFirstDice = Dice();
 
-    println(myFirstDice.sides);
-    println(myFirstDice.makeRoll());
+    val diceRoll = myFirstDice.makeRoll();
+    println("Your ${myFirstDice.sides} sided dice, rolled a $diceRoll");
+
 
 }
 
@@ -27,9 +28,9 @@ class Dice{
     val sides = 6;
 
 //    METHODS
-    fun makeRoll(){
+    fun makeRoll(): Int{
         val randomNum = (1..6).random();
-        println(randomNum);
+        return randomNum;
     }
 
 
